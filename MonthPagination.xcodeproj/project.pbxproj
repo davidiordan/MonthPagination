@@ -16,9 +16,9 @@
 		4F810D6428DD4BF500E662DA /* MonthPaginationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F810D6328DD4BF500E662DA /* MonthPaginationTests.swift */; };
 		4F810D6E28DD4BF500E662DA /* MonthPaginationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F810D6D28DD4BF500E662DA /* MonthPaginationUITests.swift */; };
 		4F810D7028DD4BF500E662DA /* MonthPaginationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F810D6F28DD4BF500E662DA /* MonthPaginationUITestsLaunchTests.swift */; };
-		4F810D7E28DD515300E662DA /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 4F810D7D28DD515300E662DA /* Charts */; };
 		4F810D8028DD683100E662DA /* CarbonChartNavigableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F810D7F28DD683100E662DA /* CarbonChartNavigableView.swift */; };
 		4FB1978128EA83E900CE643C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4FB1978028EA83E900CE643C /* README.md */; };
+		4FB1978628F7AED500CE643C /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 4FB1978528F7AED500CE643C /* Charts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +54,7 @@
 		4F810D6F28DD4BF500E662DA /* MonthPaginationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPaginationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4F810D7F28DD683100E662DA /* CarbonChartNavigableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonChartNavigableView.swift; sourceTree = "<group>"; };
 		4FB1978028EA83E900CE643C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4FB1978328F7ADF000CE643C /* Charts */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Charts; path = ../Charts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F810D7E28DD515300E662DA /* Charts in Frameworks */,
+				4FB1978628F7AED500CE643C /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,11 +86,13 @@
 		4F810D4028DD4BF400E662DA = {
 			isa = PBXGroup;
 			children = (
+				4FB1978228F7ADF000CE643C /* Packages */,
 				4FB1978028EA83E900CE643C /* README.md */,
 				4F810D4B28DD4BF400E662DA /* MonthPagination */,
 				4F810D6228DD4BF500E662DA /* MonthPaginationTests */,
 				4F810D6C28DD4BF500E662DA /* MonthPaginationUITests */,
 				4F810D4A28DD4BF400E662DA /* Products */,
+				4FB1978428F7AED500CE643C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +138,21 @@
 			path = MonthPaginationUITests;
 			sourceTree = "<group>";
 		};
+		4FB1978228F7ADF000CE643C /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4FB1978328F7ADF000CE643C /* Charts */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		4FB1978428F7AED500CE643C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,7 +170,7 @@
 			);
 			name = MonthPagination;
 			packageProductDependencies = (
-				4F810D7D28DD515300E662DA /* Charts */,
+				4FB1978528F7AED500CE643C /* Charts */,
 			);
 			productName = MonthPagination;
 			productReference = 4F810D4928DD4BF400E662DA /* MonthPagination.app */;
@@ -227,7 +245,6 @@
 			);
 			mainGroup = 4F810D4028DD4BF400E662DA;
 			packageReferences = (
-				4F810D7C28DD515200E662DA /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 4F810D4A28DD4BF400E662DA /* Products */;
 			projectDirPath = "";
@@ -625,21 +642,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		4F810D7C28DD515200E662DA /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		4F810D7D28DD515300E662DA /* Charts */ = {
+		4FB1978528F7AED500CE643C /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4F810D7C28DD515200E662DA /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */

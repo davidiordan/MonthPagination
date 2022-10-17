@@ -9,6 +9,29 @@ import Charts
 import UIKit
 
 class CarbonChartNavigableView: UIStackView {
+    let randomWords: [String] = [
+        "premium",
+        "acid",
+        "eyes",
+        "cake",
+        "cup",
+        "overjoyed",
+        "snakes",
+        "broken",
+        "able",
+        "base",
+        "grey",
+        "desire",
+        "park",
+        "calculate",
+        "linen",
+        "chase",
+        "tawdry",
+        "battle",
+        "observation",
+        "crow"
+    ]
+
     lazy var navigationLabelStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -67,8 +90,10 @@ class CarbonChartNavigableView: UIStackView {
         chart.holeRadiusPercent = 0.7
         chart.holeColor = .clear
         chart.legend.enabled = false
-        chart.drawEntryLabelsEnabled = false
+        chart.drawEntryLabelsEnabled = true
+        chart.entryLabelColor = .black
         chart.translatesAutoresizingMaskIntoConstraints = false
+        chart.chartDescription = Description()
 
         return chart
     }()
@@ -107,6 +132,10 @@ class CarbonChartNavigableView: UIStackView {
 
         addArrangedSubview(navigationLabelStack)
         addArrangedSubview(pieChartView)
+
+        NSLayoutConstraint.activate([
+            pieChartView.widthAnchor.constraint(equalToConstant: 200)
+        ])
     }
 
     @objc private func navigateDateForward() {
@@ -136,13 +165,15 @@ class CarbonChartNavigableView: UIStackView {
     }
 
     private func buildChart(with data: CarbonData) {
-        let dataEntries = data.inputValues.map { PieChartDataEntry(value: $0.value)}
+        let dataEntries = data.inputValues.map { PieChartDataEntry(value: $0.value, label: randomWords.randomElement()) }
         let dataSet = PieChartDataSet(entries: dataEntries)
         dataSet.setColors(data.inputValues.map { $0.color }, alpha: 1.0)
         dataSet.sliceSpace = 6.0
+        dataSet.entryLabelColor = .black
 
         let chartData = PieChartData(dataSet: dataSet)
-        chartData.setDrawValues(false)
+        chartData.setValueTextColor(.black)
+        chartData.setDrawValues(true)
 
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .none
