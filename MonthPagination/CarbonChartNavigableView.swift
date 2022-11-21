@@ -93,7 +93,6 @@ class CarbonChartNavigableView: UIStackView {
         chart.drawEntryLabelsEnabled = true
         chart.entryLabelColor = .black
         chart.translatesAutoresizingMaskIntoConstraints = false
-        chart.chartDescription = Description()
 
         return chart
     }()
@@ -134,7 +133,7 @@ class CarbonChartNavigableView: UIStackView {
         addArrangedSubview(pieChartView)
 
         NSLayoutConstraint.activate([
-            pieChartView.widthAnchor.constraint(equalToConstant: 200)
+            pieChartView.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
 
@@ -170,6 +169,9 @@ class CarbonChartNavigableView: UIStackView {
         dataSet.setColors(data.inputValues.map { $0.color }, alpha: 1.0)
         dataSet.sliceSpace = 6.0
         dataSet.entryLabelColor = .black
+        dataSet.yValuePosition = PieChartDataSet.ValuePosition.outsideSlice
+        dataSet.xValuePosition = PieChartDataSet.ValuePosition.outsideSlice
+        dataSet.valueLineColor = UIColor(white: 0.4, alpha: 1.0)
 
         let chartData = PieChartData(dataSet: dataSet)
         chartData.setValueTextColor(.black)

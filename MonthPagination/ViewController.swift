@@ -47,7 +47,7 @@ class ViewController: UIViewController {
             monthNavigationView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             monthNavigationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             monthNavigationView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            monthNavigationView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+//            monthNavigationView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 
